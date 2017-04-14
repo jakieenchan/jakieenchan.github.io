@@ -12,13 +12,7 @@
     
     <meta name="author" content="jakieenchan">
     
-    <meta name="description" content="一、实验目的###1.掌握git使用
-###2.掌握使用Github作为远程仓库
-二、实验任务###1.练习本地git操作
-###2.用SSH同步本地与Github仓库
-##三、实验步骤与结果
-##本地git操作
-###(一)创建版本库1.创建一个空目录，在Git Bush中输入123$ mkdir">
+    <meta name="description" content="一、实验目的1.掌握git使用2.掌握使用Github作为远程仓库二、实验任务1.练习本地git操作2.用SSH同步本地与Github仓库三、实验步骤与结果本地git操作(一)创建版本库1.创建一个空目录，在Git Bush中输入123$ mkdir learngit$ cd learngit$ p">
     
     
     
@@ -88,7 +82,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-04-14T07:56:05.000Z" itemprop="datePublished">2017-04-14</time>
-    更新日期:<time datetime="2017-04-14T07:59:54.067Z" itemprop="dateModified">2017-04-14</time>
+    更新日期:<time datetime="2017-04-14T08:03:04.092Z" itemprop="dateModified">2017-04-14</time>
     
   </p>
 </header>
@@ -97,16 +91,10 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、实验目的"><span class="toc-number">1.</span> <span class="toc-text">一、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、实验任务"><span class="toc-number">2.</span> <span class="toc-text">二、实验任务</span></a></li></ol>
+		
 		</div>
 		
-		<h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a><strong>一、实验目的</strong></h2><p>###1.掌握git使用</p>
-<p>###2.掌握使用Github作为远程仓库</p>
-<h2 id="二、实验任务"><a href="#二、实验任务" class="headerlink" title="二、实验任务"></a><strong>二、实验任务</strong></h2><p>###1.练习本地git操作</p>
-<p>###2.用SSH同步本地与Github仓库</p>
-<p>##<strong>三、实验步骤与结果</strong></p>
-<p>##<strong>本地git操作</strong></p>
-<p>###<strong>(一)创建版本库</strong><br>1.创建一个空目录，在Git Bush中输入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir learngit</div><div class="line">$ cd learngit</div><div class="line">$ pwd   //显示当前目录</div></pre></td></tr></table></figure></p>
+		<p> <strong>一、实验目的</strong><br>1.掌握git使用<br>2.掌握使用Github作为远程仓库<br><strong>二、实验任务</strong><br>1.练习本地git操作<br>2.用SSH同步本地与Github仓库<br><strong>三、实验步骤与结果</strong><br><strong>本地git操作</strong><br><strong>(一)创建版本库</strong><br>1.创建一个空目录，在Git Bush中输入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir learngit</div><div class="line">$ cd learngit</div><div class="line">$ pwd   //显示当前目录</div></pre></td></tr></table></figure></p>
 <p>在我的Windows下，该仓库位于C:\Users\Chen Kai\Desktop\learngit。</p>
 <ol>
 <li>将该目录变成Git可以管理的仓库，在Git Bush中输入<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure>
@@ -114,7 +102,7 @@
 </ol>
 <p>此时在当前目录下发现一个隐藏的.git的目录（用ls -ah命令可看见），用于跟踪管理版本库。<br>3.添加文件到版本库<br>(1)用Notepad++编写一个readme.txt文件，内容如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git <span class="keyword">is</span> a version control system.</div><div class="line">Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
 <p>(2)把文件放到仓库<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt                      //添加文件到仓库</div><div class="line">$ git commit -m <span class="string">"wrote a readme file"</span>     //提交文件到仓库</div></pre></td></tr></table></figure></p>
-<p>###<strong>(二)准备时光穿梭</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>修改readme.txt文件，改成以下内容</div><div class="line">Git <span class="keyword">is</span> a distributed version control system.</div><div class="line">Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
+<p><strong>(二)准备时光穿梭</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>修改readme.txt文件，改成以下内容</div><div class="line">Git <span class="keyword">is</span> a distributed version control system.</div><div class="line">Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
 <p>2.查看结果和具体修改内容<br>查看结果，使用git status命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line"><span class="comment"># Changes not staged for commit:</span></div><div class="line"><span class="comment">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></div><div class="line"><span class="comment">#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#    modified:   readme.txt</span></div><div class="line"><span class="comment">#</span></div><div class="line">no changes added to commit (use <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)</div></pre></td></tr></table></figure></p>
 <p>该命令可让我们时刻掌握仓库当前的状态，上面的命令告诉我们，readme.txt被修改过了，但还没有准备提交的修改。<br>查看具体修改内容，可以使用git  diff命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff readme.txt</div><div class="line">diff --git a/readme.txt b/readme.txt</div><div class="line">index <span class="number">46</span>d49bf.<span class="number">.9247</span>db6 <span class="number">100644</span></div><div class="line">--- a/readme.txt</div><div class="line">+++ b/readme.txt</div><div class="line"><span class="meta">@@ -1,2 +1,2 @@</span></div><div class="line">-Git <span class="keyword">is</span> a version control system.</div><div class="line">+Git <span class="keyword">is</span> a distributed version control system.</div><div class="line"> Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
 <p>3.提交修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div><div class="line">$ git status  //用于查看当前仓库状态</div><div class="line">$ git commit -m <span class="string">"add distributed"</span></div><div class="line">$ git status  //用于查看当前仓库状态</div></pre></td></tr></table></figure></p>
@@ -123,21 +111,18 @@
 </li>
 </ol>
 <p>5.提交修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div><div class="line">$ git commit -m <span class="string">"append GPL"</span></div></pre></td></tr></table></figure></p>
-<p>###<strong>(三)时光穿梭</strong><br>1.查看历史记录，使用git  log命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure></p>
+<p><strong>(三)时光穿梭</strong><br>1.查看历史记录，使用git  log命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure></p>
 <p>本地操作log截图如下<br><img src="http://i2.muimg.com/500543/d5e08c6553814ed2.png" alt="cmd-markdown-logo"><br>若嫌输出信息多，可使用git log –pretty=oneline命令，简化输出信息。<br>2.回退到上一个版本（GPL版本         distributed版本）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure></p>
 <p>使用cat  readme.txt命令查看当前readme文件内容，可发现已回到过去的版本。<br>使用git  log命令可发现版本库中只有两个状态。<br>3.回到未来（GPL版本–&gt;distributed版本）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard  <span class="number">6</span>b8ce024      //<span class="number">6</span>b8ce024为GPL版本的commit id</div></pre></td></tr></table></figure></p>
 <p>使用cat   readme.txt命令查看当前readme文件内容，可发现已回到未来的版本。<br>4.查看每一次命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure></p>
-<p>##<strong>使用ssh同步本地与Github仓库作</strong></p>
-<p>###<strong>(一)创建分支</strong><br>1.创建一个dev分支，并切换到dev分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b dev</div></pre></td></tr></table></figure></p>
+<p><strong>使用ssh同步本地与Github仓库作</strong><br><strong>(一)创建分支</strong><br>1.创建一个dev分支，并切换到dev分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b dev</div></pre></td></tr></table></figure></p>
 <p>或者<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch dev</div><div class="line">$ git checkout dev</div></pre></td></tr></table></figure></p>
 <p>2.查看当前分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* dev</div><div class="line">  master</div></pre></td></tr></table></figure></p>
 <p>此时会列出所有分支，当前分支前面会标一个*号<br>3.在dev分支上进行修改，并提交修改<br>4.创建一个feature1分支，并切换到feature1分支，在此分支上进行修改，并提交修改<br>5.切换到master分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout master</div></pre></td></tr></table></figure></p>
-<p>并在此分支上修改，提交修改。</p>
-<p>###<strong>(二)同步分支</strong><br>1.登陆Github网页，新建一个git仓库，repository  name为learngit。<br>2.在本地的learngit仓库运行命令，在git  bash中输入以下命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:jakieenchan/learngit.git</div></pre></td></tr></table></figure></p>
+<p>并在此分支上修改，提交修改。<br><strong>(二)同步分支</strong><br>1.登陆Github网页，新建一个git仓库，repository  name为learngit。<br>2.在本地的learngit仓库运行命令，在git  bash中输入以下命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:jakieenchan/learngit.git</div></pre></td></tr></table></figure></p>
 <p>3.将本地库内容同步到远程库，输入以下命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master       </div><div class="line">$ git push -u origin dev</div><div class="line">$ git push -u origin feature1</div></pre></td></tr></table></figure></p>
 <p>初次推送分支时，-u参数可以将本地和远程的分支相互关联，以后同步时就可以简化命令.<br>初次同步，会遇到警告，<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure></p>
-<p>此时输入yes并回车即可。<br>同步完毕。<br>Github上commits截图如下<br><img src="http://i2.muimg.com/500543/e54d360823779256.png" alt="cmd-markdown-logo"><br><img src="http://i2.muimg.com/500543/df7eb508bb120096.png" alt="cmd-markdown-logo"></p>
-<p>##<strong>四、实验小结</strong><br>1.同步时，遇到如下警告<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could <span class="keyword">not</span> read <span class="keyword">from</span> remote repository.</div><div class="line">Please make sure you have the correct access rights</div><div class="line"><span class="keyword">and</span> the repository exists.</div></pre></td></tr></table></figure></p>
+<p>此时输入yes并回车即可。<br>同步完毕。<br>Github上commits截图如下<br><img src="http://i2.muimg.com/500543/e54d360823779256.png" alt="cmd-markdown-logo"><br><img src="http://i2.muimg.com/500543/df7eb508bb120096.png" alt="cmd-markdown-logo"><br><strong>四、实验小结</strong><br>1.同步时，遇到如下警告<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could <span class="keyword">not</span> read <span class="keyword">from</span> remote repository.</div><div class="line">Please make sure you have the correct access rights</div><div class="line"><span class="keyword">and</span> the repository exists.</div></pre></td></tr></table></figure></p>
 <p><strong>解决方法：</strong><br>此时需要将C:\Users\Chen Kai下的.ssh文件夹删除，在git bush中执行命令<br>ssh-keygen -t rsa -C 1054636188@qq.com<br>此时会生成一个全新的.ssh文件夹。用Visual Studio Code软件打开其中的id_rsa.pub文件，复制内容。登陆github网页，在Edit profile中，选择SSH and GPG keys，在这里粘贴刚刚复制的ssh公钥即可。<br>2.对github和git bash有了更多的认识和理解。</p>
   
 	</div>
@@ -181,7 +166,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、实验目的"><span class="toc-number">1.</span> <span class="toc-text">一、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、实验任务"><span class="toc-number">2.</span> <span class="toc-text">二、实验任务</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
