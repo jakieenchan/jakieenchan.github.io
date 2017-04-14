@@ -1,0 +1,444 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
+  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
+<meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  
+    <title>newblog | jakieenchan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="jakieenchan">
+    
+    <meta name="description" content="实验二 git的使用一、实验目的###1.掌握git使用
+###2.掌握使用Github作为远程仓库
+二、实验任务###1.练习本地git操作
+###2.用SSH同步本地与Github仓库
+##三、实验步骤与结果
+##本地git操作
+###(一)创建版本库1.创建一个空目录，在Git Bush中输入">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="jakieenchan" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            var _bdId ='391982416296a0d54221f59fe35250d4';
+             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+     
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="jakieenchan">jakieenchan</a></h1>
+				<a class="blog-motto"></a>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+					<li>
+					
+                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
+                                            <label>Search</label>
+                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="搜索"><br>
+					
+					</li>
+				</ul>
+                            </nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/14/newblog-2/" title="newblog" itemprop="url">newblog</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="jakieenchan">jakieenchan</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-04-14T07:56:05.000Z" itemprop="datePublished">2017-04-14</time>
+    更新日期:<time datetime="2017-04-14T07:57:54.581Z" itemprop="dateModified">2017-04-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实验二-git的使用"><span class="toc-number">1.</span> <span class="toc-text">实验二 git的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、实验目的"><span class="toc-number">1.1.</span> <span class="toc-text">一、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、实验任务"><span class="toc-number">1.2.</span> <span class="toc-text">二、实验任务</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="实验二-git的使用"><a href="#实验二-git的使用" class="headerlink" title="实验二 git的使用"></a>实验二 git的使用</h1><h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a><strong>一、实验目的</strong></h2><p>###1.掌握git使用</p>
+<p>###2.掌握使用Github作为远程仓库</p>
+<h2 id="二、实验任务"><a href="#二、实验任务" class="headerlink" title="二、实验任务"></a><strong>二、实验任务</strong></h2><p>###1.练习本地git操作</p>
+<p>###2.用SSH同步本地与Github仓库</p>
+<p>##<strong>三、实验步骤与结果</strong></p>
+<p>##<strong>本地git操作</strong></p>
+<p>###<strong>(一)创建版本库</strong><br>1.创建一个空目录，在Git Bush中输入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir learngit</div><div class="line">$ cd learngit</div><div class="line">$ pwd   //显示当前目录</div></pre></td></tr></table></figure></p>
+<p>在我的Windows下，该仓库位于C:\Users\Chen Kai\Desktop\learngit。</p>
+<ol>
+<li>将该目录变成Git可以管理的仓库，在Git Bush中输入<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此时在当前目录下发现一个隐藏的.git的目录（用ls -ah命令可看见），用于跟踪管理版本库。<br>3.添加文件到版本库<br>(1)用Notepad++编写一个readme.txt文件，内容如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git <span class="keyword">is</span> a version control system.</div><div class="line">Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
+<p>(2)把文件放到仓库<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt                      //添加文件到仓库</div><div class="line">$ git commit -m <span class="string">"wrote a readme file"</span>     //提交文件到仓库</div></pre></td></tr></table></figure></p>
+<p>###<strong>(二)准备时光穿梭</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>修改readme.txt文件，改成以下内容</div><div class="line">Git <span class="keyword">is</span> a distributed version control system.</div><div class="line">Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
+<p>2.查看结果和具体修改内容<br>查看结果，使用git status命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line"><span class="comment"># Changes not staged for commit:</span></div><div class="line"><span class="comment">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></div><div class="line"><span class="comment">#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#    modified:   readme.txt</span></div><div class="line"><span class="comment">#</span></div><div class="line">no changes added to commit (use <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)</div></pre></td></tr></table></figure></p>
+<p>该命令可让我们时刻掌握仓库当前的状态，上面的命令告诉我们，readme.txt被修改过了，但还没有准备提交的修改。<br>查看具体修改内容，可以使用git  diff命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff readme.txt</div><div class="line">diff --git a/readme.txt b/readme.txt</div><div class="line">index <span class="number">46</span>d49bf.<span class="number">.9247</span>db6 <span class="number">100644</span></div><div class="line">--- a/readme.txt</div><div class="line">+++ b/readme.txt</div><div class="line"><span class="meta">@@ -1,2 +1,2 @@</span></div><div class="line">-Git <span class="keyword">is</span> a version control system.</div><div class="line">+Git <span class="keyword">is</span> a distributed version control system.</div><div class="line"> Git <span class="keyword">is</span> free software.</div></pre></td></tr></table></figure></p>
+<p>3.提交修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div><div class="line">$ git status  //用于查看当前仓库状态</div><div class="line">$ git commit -m <span class="string">"add distributed"</span></div><div class="line">$ git status  //用于查看当前仓库状态</div></pre></td></tr></table></figure></p>
+<ol>
+<li>再一次修改readme.txt文件，改成以下内容<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git <span class="keyword">is</span> a distributed version control system.</div><div class="line">Git <span class="keyword">is</span> free software distributed under the GPL.</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>5.提交修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div><div class="line">$ git commit -m <span class="string">"append GPL"</span></div></pre></td></tr></table></figure></p>
+<p>###<strong>(三)时光穿梭</strong><br>1.查看历史记录，使用git  log命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure></p>
+<p>本地操作log截图如下<br><img src="http://i2.muimg.com/500543/d5e08c6553814ed2.png" alt="cmd-markdown-logo"><br>若嫌输出信息多，可使用git log –pretty=oneline命令，简化输出信息。<br>2.回退到上一个版本（GPL版本         distributed版本）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div></pre></td></tr></table></figure></p>
+<p>使用cat  readme.txt命令查看当前readme文件内容，可发现已回到过去的版本。<br>使用git  log命令可发现版本库中只有两个状态。<br>3.回到未来（GPL版本–&gt;distributed版本）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard  <span class="number">6</span>b8ce024      //<span class="number">6</span>b8ce024为GPL版本的commit id</div></pre></td></tr></table></figure></p>
+<p>使用cat   readme.txt命令查看当前readme文件内容，可发现已回到未来的版本。<br>4.查看每一次命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div></pre></td></tr></table></figure></p>
+<p>##<strong>使用ssh同步本地与Github仓库作</strong></p>
+<p>###<strong>(一)创建分支</strong><br>1.创建一个dev分支，并切换到dev分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b dev</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch dev</div><div class="line">$ git checkout dev</div></pre></td></tr></table></figure></p>
+<p>2.查看当前分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* dev</div><div class="line">  master</div></pre></td></tr></table></figure></p>
+<p>此时会列出所有分支，当前分支前面会标一个*号<br>3.在dev分支上进行修改，并提交修改<br>4.创建一个feature1分支，并切换到feature1分支，在此分支上进行修改，并提交修改<br>5.切换到master分支<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout master</div></pre></td></tr></table></figure></p>
+<p>并在此分支上修改，提交修改。</p>
+<p>###<strong>(二)同步分支</strong><br>1.登陆Github网页，新建一个git仓库，repository  name为learngit。<br>2.在本地的learngit仓库运行命令，在git  bash中输入以下命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:jakieenchan/learngit.git</div></pre></td></tr></table></figure></p>
+<p>3.将本地库内容同步到远程库，输入以下命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master       </div><div class="line">$ git push -u origin dev</div><div class="line">$ git push -u origin feature1</div></pre></td></tr></table></figure></p>
+<p>初次推送分支时，-u参数可以将本地和远程的分支相互关联，以后同步时就可以简化命令.<br>初次同步，会遇到警告，<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure></p>
+<p>此时输入yes并回车即可。<br>同步完毕。<br>Github上commits截图如下<br><img src="http://i2.muimg.com/500543/e54d360823779256.png" alt="cmd-markdown-logo"><br><img src="http://i2.muimg.com/500543/df7eb508bb120096.png" alt="cmd-markdown-logo"></p>
+<p>##<strong>四、实验小结</strong><br>1.同步时，遇到如下警告<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could <span class="keyword">not</span> read <span class="keyword">from</span> remote repository.</div><div class="line">Please make sure you have the correct access rights</div><div class="line"><span class="keyword">and</span> the repository exists.</div></pre></td></tr></table></figure></p>
+<p><strong>解决方法：</strong><br>此时需要将C:\Users\Chen Kai下的.ssh文件夹删除，在git bush中执行命令<br>ssh-keygen -t rsa -C 1054636188@qq.com<br>此时会生成一个全新的.ssh文件夹。用Visual Studio Code软件打开其中的id_rsa.pub文件，复制内容。登陆github网页，在Edit profile中，选择SSH and GPG keys，在这里粘贴刚刚复制的ssh公钥即可。<br>2.对github和git bash有了更多的认识和理解。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/04/14/newblog-2/" data-title="newblog | jakieenchan" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/03/20/newblog-1/"  title="实验一">
+ <strong>NEXT:</strong><br/> 
+ <span>实验一
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="newblog" data-thread-key="newblog-2" data-author-key="jakieenchan" data-url="http://yoursite.com/post/newblog-2"></div>
+	
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实验二-git的使用"><span class="toc-number">1.</span> <span class="toc-text">实验二 git的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、实验目的"><span class="toc-number">1.1.</span> <span class="toc-text">一、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、实验任务"><span class="toc-number">1.2.</span> <span class="toc-text">二、实验任务</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	<div class="social-list" class="clearfix">
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
+      <li><a href="http://gengbiao.me" target="_blank" title="coney">coney's Blog</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+    
+            <p class="copyright"> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="jakieenchan">jakieenchan</a>
+		
+            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
+            </div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+<script>
+    
+        var _bdImg = '4';
+    
+    window._bd_share_config={
+        "common":{
+            "bdSnsKey":{
+
+            },
+            "bdText":"",
+            "bdMini":"2",
+            "bdMiniList":[
+                "qzone",
+                "tsina",
+                "weixin",
+                "renren",
+                "tqq",
+                "tieba",
+                "douban",
+                "sqq",
+                "diandian",
+                "huaban",
+                "youdao",
+                "mail",
+                "ty",
+                "fbook",
+                "twi",
+                "linkedin",
+                "copy",
+                "print"
+            ],
+            "bdPic":"",
+            "bdStyle":"0",
+            "bdSize":"16"
+        },
+        "slide":{
+            "type":"slide",
+            "bdImg":_bdImg,
+            "bdPos":"right",
+            "bdTop":"350"
+        },
+        "image":{
+            "viewList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ],
+            "viewText":"分享：",
+            "viewSize":"16"
+        },
+        "selectShare":{
+            "bdContainerClass":null,
+            "bdSelectMiniList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ]
+        }
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'null', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
