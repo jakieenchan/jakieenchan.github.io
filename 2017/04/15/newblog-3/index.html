@@ -7,22 +7,12 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>实验一 在Github上用Markdown创建技术博客 | jakieenchan</title>
+    <title>实验三 使用Github管理Android项目 | jakieenchan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="jakieenchan">
     
-    <meta name="description" content="一、实验目的
-1.熟悉github网站
-2.掌握Markdown语法
-二、实验任务
-1.注册Github账号
-2.创建Gihub Pages repository
-3.发布第一篇博客
-4.学习Markdown
-5.利用Hexo生成博客并部署到Github
-三、实验步骤与结果
-1.注册Github账号">
+    <meta name="description" content="一、实验目的1.掌握Android Studio中Git使用2.掌握Github管理项目二、实验任务1.在Android Studio中新建项目2.添加VCS中的Git支持3.发布项目到Github4.在Android Studio中进行修改代码、提交、新建分支、合并等操作5.推送项目到Github">
     
     
     
@@ -84,15 +74,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/20/newblog-1/" title="实验一 在Github上用Markdown创建技术博客" itemprop="url">实验一 在Github上用Markdown创建技术博客</a>
+      <a href="/2017/04/15/newblog-3/" title="实验三 使用Github管理Android项目" itemprop="url">实验三 使用Github管理Android项目</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="jakieenchan">jakieenchan</a>
     </p>
   <p class="article-time">
-    <time datetime="2017-03-20T12:35:38.000Z" itemprop="datePublished">2017-03-20</time>
-    更新日期:<time datetime="2017-04-15T07:57:55.861Z" itemprop="dateModified">2017-04-15</time>
+    <time datetime="2017-04-15T07:55:44.000Z" itemprop="datePublished">2017-04-15</time>
+    更新日期:<time datetime="2017-04-15T07:58:42.346Z" itemprop="dateModified">2017-04-15</time>
     
   </p>
 </header>
@@ -104,66 +94,7 @@
 		
 		</div>
 		
-		<p>一、实验目的</p>
-<p>1.熟悉github网站</p>
-<p>2.掌握Markdown语法</p>
-<p>二、实验任务</p>
-<p>1.注册Github账号</p>
-<p>2.创建Gihub Pages repository</p>
-<p>3.发布第一篇博客</p>
-<p>4.学习Markdown</p>
-<p>5.利用Hexo生成博客并部署到Github</p>
-<p>三、实验步骤与结果</p>
-<p>1.注册Github账号</p>
-<p>登入<a href="http://github.com" target="_blank" rel="external">http://github.com</a>, 注册github账号</p>
-<p>我的github账号用户名为jakieenchan</p>
-<p>2.创建Gihub Pages repository</p>
-<p><img src="http://p1.bqimg.com/500543/4075d30475517d69.png" alt="cmd-markdown-logo"></p>
-<p>3.发布第一篇博客</p>
-<p>⑴本地配置hexo</p>
-<p>1.安装Git</p>
-<p>2.安装Node</p>
-<p>3.设置npm镜像为淘宝</p>
-<p>npm config set registry https:// registry.npm.taobao.org</p>
-<p>4.安装hexo</p>
-<p>npm install –g hexo-cli</p>
-<p>5.初始化站点</p>
-<p>hexo init myhexo</p>
-<p>cd myhexo</p>
-<p>npm install </p>
-<p>6.浏览本地站点</p>
-<p>hexo server</p>
-<p>⑵在github上部署hexo</p>
-<p>1.在Github上新建repository，名称是用户名.github.io(即jakieenchan.github.io) </p>
-<p>2.修改配置文件_config.yml的deploy部分，注意空格</p>
-<p>type: git</p>
-<p>repository: <a href="https://github.com/jakieenchan/jakieenchan.github.io.git" target="_blank" rel="external">https://github.com/jakieenchan/jakieenchan.github.io.git</a>   branch: master</p>
-<p>修改配置文_config.yml的site部分</p>
-<p>Site</p>
-<p>title: jakieenchan</p>
-<p>subtitle:</p>
-<p>description:</p>
-<p>author: jakieenchan</p>
-<p>language: zh-CN</p>
-<p>timezone: Asia/Shanghai</p>
-<p>3.安装 hexo-deployer-git</p>
-<p>npm install hexo-deployer-git –save</p>
-<p>4.配置git全局邮箱与名字</p>
-<p>git config –global user.email 1054636188@qq.com</p>
-<p>git config –global user.name “jakieenchan”</p>
-<p>5.生成博客</p>
-<p>hexo generate</p>
-<p>6.部署博客</p>
-<p>hexo deploy</p>
-<p>⑶添加新文章</p>
-<p>1.生成新文章</p>
-<p>hexo new newblog</p>
-<p>2.用编辑器修改文章：myhexo\source_posts\newblog.md</p>
-<p>3.生成并发布到Github</p>
-<p>hexo d -g</p>
-<p><img src="http://p1.bqimg.com/500543/433199e750ad3544.png" alt="cmd-markdown-logo"></p>
-<p>四、实验小结</p>
-<p>通过本次实验充分理解了github，了解了Markdown文件，更深一步的掌握了搭建博客平台的技术。</p>
+		<p><strong>一、实验目的</strong><br>1.掌握Android Studio中Git使用<br>2.掌握Github管理项目<br><strong>二、实验任务</strong><br>1.在Android Studio中新建项目<br>2.添加VCS中的Git支持<br>3.发布项目到Github<br>4.在Android Studio中进行修改代码、提交、新建分支、合并等操作<br>5.推送项目到Github<br>6.如有多人合作，处理pull request<br><strong>三、实验步骤与结果</strong><br>1.在Android Studio新建一个空的activity项目，我的项目是一个关于健康食谱的App。所以我的activity名字叫HiCookbook。<br>2.单击菜单栏中的VCS–&gt;Import into Version Control–&gt;Share Project on Github，此时会弹出一个Github登陆窗口，如图所示<br><img src="http://i2.muimg.com/567571/17c8febc78d4736a.png" alt="cmd-markdown-logo"><br>输入自己的Github账户和密码，单击Login。此时，Git支持添加完毕。<br>3.单击VCS–&gt;Git–&gt;Push，第一步中创建的HiCookbook项目就发布到了Github上,如图所示<br><img src="http://i1.piimg.com/567571/e6332e32e5d3e9e7.png" alt="cmd-markdown-logo"><br>4.在Android Studio中对新建的HiCookbook项目进行修改。我在项目中添加了欢迎语和两个按钮，如图所示<br><img src="http://i1.piimg.com/567571/cc05a09477ebaaf1.png" alt="cmd-markdown-logo"><br>5.代码修改调试无误之后，单击菜单栏目VCS–&gt;Commit Changes，填写Commit Message，选择并单击Commit and Push，提交完毕。<br><strong>四、实验小结</strong><br>Android Studio与Github的结合，使得项目调试更加方便，能“纵向横向”创建修改项目，为编写App提供了更多的便利。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -173,7 +104,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/03/20/newblog-1/" data-title="实验一 在Github上用Markdown创建技术博客 | jakieenchan" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/04/15/newblog-3/" data-title="实验三 使用Github管理Android项目 | jakieenchan" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -182,19 +113,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/04/14/newblog-2/" title="实验二 git的使用">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  实验二 git的使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/12/newblog/"  title="5G">
+<a href="/2017/04/14/newblog-2/"  title="实验二 git的使用">
  <strong>NEXT:</strong><br/> 
- <span>5G
+ <span>实验二 git的使用
 </span>
 </a>
 </div>
@@ -204,7 +127,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="实验一 在Github上用Markdown创建技术博客" data-thread-key="newblog-1" data-author-key="jakieenchan" data-url="http://yoursite.com/post/newblog-1"></div>
+	<div class="ds-thread" data-title="实验三 使用Github管理Android项目" data-thread-key="newblog-3" data-author-key="jakieenchan" data-url="http://yoursite.com/post/newblog-3"></div>
 	
 </section>
 
