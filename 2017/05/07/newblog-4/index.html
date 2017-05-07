@@ -7,12 +7,12 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>实验三 使用Github管理Android项目 | jakieenchan</title>
+    <title>实验四 Gradle使用 | jakieenchan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="jakieenchan">
     
-    <meta name="description" content="一、实验目的1.掌握Android Studio中Git使用2.掌握Github管理项目二、实验任务1.在Android Studio中新建项目2.添加VCS中的Git支持3.发布项目到Github4.在Android Studio中进行修改代码、提交、新建分支、合并等操作5.推送项目到Github">
+    <meta name="description" content="一、实验目的1.掌握Gradle的使用二、实验任务1.生成多个apk2.管理依赖库3.编译提速4.增加编译内存5.调用终端指令6.精简资源7.清除缓存三、实验步骤与结果实验准备：在Android Studio中新建一个项目，我的项目名字叫My Application。在C:\Android\MyAp">
     
     
     
@@ -74,15 +74,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/15/newblog-3/" title="实验三 使用Github管理Android项目" itemprop="url">实验三 使用Github管理Android项目</a>
+      <a href="/2017/05/07/newblog-4/" title="实验四 Gradle使用" itemprop="url">实验四 Gradle使用</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="jakieenchan">jakieenchan</a>
     </p>
   <p class="article-time">
-    <time datetime="2017-04-15T07:55:44.000Z" itemprop="datePublished">2017-04-15</time>
-    更新日期:<time datetime="2017-04-15T07:58:42.346Z" itemprop="dateModified">2017-04-15</time>
+    <time datetime="2017-05-07T02:41:44.000Z" itemprop="datePublished">2017-05-07</time>
+    更新日期:<time datetime="2017-05-07T02:44:38.098Z" itemprop="dateModified">2017-05-07</time>
     
   </p>
 </header>
@@ -94,7 +94,16 @@
 		
 		</div>
 		
-		<p><strong>一、实验目的</strong><br>1.掌握Android Studio中Git使用<br>2.掌握Github管理项目<br><strong>二、实验任务</strong><br>1.在Android Studio中新建项目<br>2.添加VCS中的Git支持<br>3.发布项目到Github<br>4.在Android Studio中进行修改代码、提交、新建分支、合并等操作<br>5.推送项目到Github<br>6.如有多人合作，处理pull request<br><strong>三、实验步骤与结果</strong><br>1.在Android Studio新建一个空的activity项目，我的项目是一个关于健康食谱的App。所以我的activity名字叫HiCookbook。<br>2.单击菜单栏中的VCS–&gt;Import into Version Control–&gt;Share Project on Github，此时会弹出一个Github登陆窗口，如图所示<br><img src="http://i2.muimg.com/567571/17c8febc78d4736a.png" alt="cmd-markdown-logo"><br>输入自己的Github账户和密码，单击Login。此时，Git支持添加完毕。<br>3.单击VCS–&gt;Git–&gt;Push，第一步中创建的HiCookbook项目就发布到了Github上,如图所示<br><img src="http://i1.piimg.com/567571/e6332e32e5d3e9e7.png" alt="cmd-markdown-logo"><br>4.在Android Studio中对新建的HiCookbook项目进行修改。我在项目中添加了欢迎语和两个按钮，如图所示<br><img src="http://i1.piimg.com/567571/cc05a09477ebaaf1.png" alt="cmd-markdown-logo"><br>5.代码修改调试无误之后，单击菜单栏目VCS–&gt;Commit Changes，填写Commit Message，选择并单击Commit and Push，提交完毕。<br><strong>四、实验小结</strong><br>Android Studio与Github的结合，使得项目调试更加方便，能“纵向横向”创建修改项目，为编写App提供了更多的便利。</p>
+		<p><strong>一、实验目的</strong><br>1.掌握Gradle的使用<br><strong>二、实验任务</strong><br>1.生成多个apk<br>2.管理依赖库<br>3.编译提速<br>4.增加编译内存<br>5.调用终端指令<br>6.精简资源<br>7.清除缓存<br><strong>三、实验步骤与结果</strong><br>实验准备：在Android Studio中新建一个项目，我的项目名字叫My Application。在C:\Android\MyApplication文件夹下，按住shift，右键选择“在此处打开命令窗口”，在命令窗口内，输入gradlew task，系统会根据自身特性，下载并运行相关资源。输入gradlew task –all，即可看到各个Task的具体作用于各个Task之间的相互调用关系。</p>
+<ol>
+<li>生成多个apk<br>1.1    创建渠道占位符<br>在AndroidMainifest文件的Application节点下，创建如下所示的meta-data节点。<br><img src="http://ww4.sinaimg.cn/large/006HJ39wgy1ffcl90pbusj30c702pdfo.jpg" alt="cmd-markdown-logo"><br>1.2    配置Gradle脚本                                                   在项目的Gradle脚本的android领域中，添加productFlavors领域，并增加定义的渠道名。同时，使用manifestPlaceholders指定要替换渠道占位符的值，代码如下所示。<br><img src="http://ww4.sinaimg.cn/large/006HJ39wgy1ffclaf2kz8j30ey086weh.jpg" alt="cmd-markdown-logo"><br>这里定义了三个不同的渠道——product1、product2、product3。每个渠道都将指定值赋给渠道占位符CHANNEL_VALUE。这样配置后，就完成了整个渠道的打包工作。在终端中执行gradlew build即可开始构建，在构建完成后系统会在项目的/app/build/outputs/apk文件夹下看到所有生成的渠道包，如下图所示。<br><img src="http://ww1.sinaimg.cn/large/006HJ39wgy1ffclazdcuvj30jz07pjrs.jpg" alt="cmd-markdown-logo"></li>
+<li>管理依赖库<br>2.1利用Gradle的通知机制<br>虽然当项目依赖的库项目有更新之后，Gradle并不会立即通知主项目，但Gradle会给出一种通知机制，即利用Gradle的检查周期进行check。<br>在android领域下productFlavors节点后，输入以下代码<br><img src="http://ww4.sinaimg.cn/large/006HJ39wgy1ffclc2coakj30fr0360sl.jpg" alt="cmd-markdown-logo"><br>这样就可以设置Gradle依赖的缓存时间。同时Gradle还提供了在依赖传递中的强制刷新配置。例如，在一个简单的compile语句中，代码如下所示。<br><img src="http://ww2.sinaimg.cn/large/006HJ39wgy1ffclchm7aaj30ez02a3yb.jpg" alt="cmd-markdown-logo"><br>如果增加一个属性transitive并让其值为true，则代表会强制刷新远程库，避免远程库更新后本地未刷新的问题。<br>2.2利用Gradle的依赖检查<br>实际上，利用Gradle提供的task可以很方便地解决依赖问题，用到的Gradle指令就是gradlew androidDependencies，使用效果如下所示。<br><img src="http://ww2.sinaimg.cn/large/006HJ39wgy1ffclczjbebj30ej0j6q3h.jpg" alt="cmd-markdown-logo"><br>利用这个指令，可以很方便地找到每种buildType下的依赖关系图。这样当某个依赖库发生变更的时候，就可以通过这个task检查每个项目下是否包含该依赖库的引用。<br>2.3 Gradle依赖统一管理<br>利用Gradle全局变量就可以非常方便地实现这一管理，在根目录的build.gradle脚本中配置如下所示代码。<br><img src="http://ww1.sinaimg.cn/large/006HJ39wgy1ffcldh1o19j30jl04a746.jpg" alt="cmd-markdown-logo"><br>在全局Gradle脚本中，指定了android和dependencies两个列表，并在其中配置了统一的参数和对应的值。这样在每个module中，可以通过代码使用全局的依赖配置，代码如下所示。<br><img src="http://ww4.sinaimg.cn/large/006HJ39wgy1ffclej04t9j30gy06vmx6.jpg" alt="cmd-markdown-logo"><br>通过这种方式，可以使用全局参数统一管理这些依赖配置。</li>
+<li>编译提速<br>在gradle.properties文件中增加如下所示的代码。<br><img src="http://ww1.sinaimg.cn/large/006HJ39wgy1ffclf2j58aj30af02c743.jpg" alt="cmd-markdown-logo"><br>同时，在build.gradle中增加如下所示的代码。<br><img src="http://ww3.sinaimg.cn/large/006HJ39wgy1ffclfilb33j307x037q2q.jpg" alt="cmd-markdown-logo"><br>gradle.properties文件中的代码，表示开启Gradle的多线程和多核心支持。而build.gradle中的代码，表示开启Gradle的增量编译，增加编译的内存资源到4G。这两个操作或多或少可以增加一些编译的速度，但也会更加消耗系统资源。</li>
+<li>增加编译内存<br>以下是Gradle的默认配置，如果需要增大内存使用，只需要反注释这两行代码，并修改内存大小即可。<br><img src="http://ww3.sinaimg.cn/large/006HJ39wgy1ffclg2utllj30rw03awei.jpg" alt="cmd-markdown-logo"></li>
+<li>调用终端指令<br>在java中可以通过Runtime.exec()方法来获取终端指令的数据。在Gradle中同样可以获取终端数据，例如新建一个task，代码如下所示。<br><img src="http://ww1.sinaimg.cn/large/006HJ39wgy1ffclgl0payj30jp02jmwz.jpg" alt="cmd-markdown-logo"><br>在上面的代码中，调用gitlog –pretty=oneline -1指令，即打印最近一行git log信息，通过调用’command’.execute([],project.rootDir).text即可返回其数据，类似于Runtime.exec()方法，在终端中输入gradlew testcmd即可。<br>在Gradle脚本中调用终端指令会降低编译速度。需权衡利弊，决定是否使用。</li>
+<li>精简资源<br>manifyEnabled指令，不仅用于对Android App进行混淆，同时可以对代码进行优化、精简。同时配合shrinkResources指令，还可以项目工程中无效的资源文件，从而进一步精简APK文件。示例代码如下。<br><img src="http://ww4.sinaimg.cn/large/006HJ39wgy1ffclhn308dj30ov059dfq.jpg" alt="cmd-markdown-logo"><br>在androidstudio中，IDE也提供了一个快捷指令来直接进行资源精简。使用快捷键“ctrl+shift+A”就可以调出快捷指令输入框，输入“remove unusedresources”即可执行该指令，其效果与shrinkResources类似，如下图所示。<br><img src="http://ww1.sinaimg.cn/large/006HJ39wgy1ffcli5k7jjj30cb04y0sn.jpg" alt="cmd-markdown-logo"><br>使用这两种方式来进行资源清理，可以很大程度地减少垃圾资源的占用。</li>
+<li>清除缓存<br>在Gradle中，提供了gradlew clean来清除缓存，还提供了一个指令来重新刷新全部的依赖库——gradlew –refresh-dependencies。通过这个指令，可以强制刷新所依赖的库项目，从而获取新的版本库。<br><img src="http://ww3.sinaimg.cn/large/006HJ39wgy1ffclipefsrj30ge04tt8k.jpg" alt="cmd-markdown-logo"><br><strong>四、实验小结</strong><br>1.实验过程中出错，并提示Execution failed for task’:app:compileProduct1DebugJavaWithJavac’.<br>Could not find tools.jar. Please check that C:\Program Files\Java\jre1.8.0_77 contains a valid JDK installation.<br>解决办法：重装IDK，然后右键我的电脑，选择属性-&gt;选择高级系统设置-&gt;环境变量-&gt;系统变量，在系统变量中新建JAVA_HOME变量，变量值为JDK安装路径，我的变量值为C:\Program Files (x86)\Java\jdk1.8.0_101，保存确定后退出。<br>2.Gradle虽然功能强大，但是操作过程复杂，只有在充分熟悉之后才能用起来得心应手</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -104,7 +113,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/04/15/newblog-3/" data-title="实验三 使用Github管理Android项目 | jakieenchan" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/05/07/newblog-4/" data-title="实验四 Gradle使用 | jakieenchan" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -113,19 +122,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/05/07/newblog-4/" title="实验四 Gradle使用">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  实验四 Gradle使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/14/newblog-2/"  title="实验二 git的使用">
+<a href="/2017/04/15/newblog-3/"  title="实验三 使用Github管理Android项目">
  <strong>NEXT:</strong><br/> 
- <span>实验二 git的使用
+ <span>实验三 使用Github管理Android项目
 </span>
 </a>
 </div>
@@ -135,7 +136,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="实验三 使用Github管理Android项目" data-thread-key="newblog-3" data-author-key="jakieenchan" data-url="http://yoursite.com/post/newblog-3"></div>
+	<div class="ds-thread" data-title="实验四 Gradle使用" data-thread-key="newblog-4" data-author-key="jakieenchan" data-url="http://yoursite.com/post/newblog-4"></div>
 	
 </section>
 
